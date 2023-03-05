@@ -1,0 +1,290 @@
+/*:root {
+
+    --color: black;
+
+}
+
+body {
+    background-color: rgb(126, 201, 158);
+}
+
+.header h1 {
+    color: var(--color);
+    font-size: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+p {
+    padding-left: 10%;
+    padding-right: 10%;
+    color: var(--color);
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-style: italic;
+}
+
+.btn {
+
+    color: var(--color);
+    font-size: 70px;
+    background-color: rgb(192, 43, 43);
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button1 {
+    display: flex;
+    justify-content: center;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(24, 53, 24);
+}*/
+
+:root {
+
+    --color: black;
+
+}
+
+body,
+html {
+    height: 100%;
+    background-color: rgb(38, 119, 73);
+
+}
+
+.outer-container {
+    padding: 10px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    background-color: yellow;
+
+}
+
+.top-container {
+    display: flex;
+    height: 50px;
+
+
+
+}
+
+.middle-container {
+    margin-top: 10%;
+    /* display: flex;*/
+    background-color: rgb(149, 197, 149);
+    width: 50%;
+    margin-left: 20%;
+    /* max-height: 80%;*/
+    margin-right: 20%;
+    border: 5px solid rgb(12, 41, 12);
+}
+
+/*button {
+    float: left;
+
+    color: var(--color);
+    font-size: 50px;
+    background-color: rgb(192, 43, 43);
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}*/
+
+#timeleft {
+
+    float: right;
+    font-size: 30px;
+    color: var(--color);
+    font-weight: bold;
+
+}
+
+#lab1 {
+    padding-right: 40px;
+    float: right;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.quiz-intro {
+    display: contents;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+h1,
+h2 {
+    color: var(--color);
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+.quiz-intro p {
+    padding-left: 10%;
+    padding-right: 10%;
+    color: var(--color);
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-style: italic;
+}
+
+#viewscore1 {
+    color: var(--color);
+    font-size: 50px;
+    background-color: rgb(192, 43, 43);
+    border-radius: 10px;
+
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+#quiz-start {
+    color: var(--color);
+    font-size: 50px;
+    background-color: rgb(192, 43, 43);
+    border-radius: 10px;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+main {}
+
+
+
+.question-answer {
+    display: none;
+    /*  display: contents;*/
+
+
+}
+
+ul,
+li {
+    list-style-type: none;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.question-answer button {
+
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+
+.question-answer button:hover {
+    background-color: yellow;
+}
+
+
+::marker {
+    display: none;
+}
+
+.quiz-end-screen h3 {
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.quiz-end-screen label {
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+input {
+    width: 200px;
+    height: 50px;
+    font-size: 40px;
+}
+
+#end-submit {
+    color: white;
+    align-items: center;
+}
+
+.quiz-end-screen {
+    display: none;
+    /* display: contents;*/
+}
+
+
+.HighScores-screen {
+    display: none;
+    /*display: contents;*/
+}
+
+
+ol,
+li {
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.evaluate {
+    display: none;
+    padding-top: 50px;
+    padding-left: 700px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+
+
+    /*  border-style: solid;
+  /*  border-width: 50px 1px 2px 2px;
+    top right bottom left */
+}
+
+.evaluate::before {
+
+    content: "";
+    position: absolute;
+
+    width: 3px;
+
+
+    height: 60%;
+    background: red;
+    top: 50%;
+    transform: rotate(90deg);
+}
+
+.evaluate label {}
+
+/* Small smartphones - image placeholders change color */
+@media screen and (max-width: 576px) {
+    .sample-img {
+        background-color: #8ac4ff;
+    }
+}
+
+/* Tablets - header changes color */
+@media screen and (max-width: 992px) {
+    header {
+        background: #772014;
+    }
+}
