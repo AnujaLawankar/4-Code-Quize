@@ -121,8 +121,8 @@ html {
 }
 
 .quiz-intro {
-    /*  display: contents;*/
-    display: none;
+    display: contents;
+    /* display: none;*/
     margin-bottom: 10%;
     margin-left: 10%;
     margin-right: 10%;
@@ -185,8 +185,8 @@ main {}
 }
 
 .question-answer {
-    /* display: none;*/
-    display: contents;
+    display: none;
+    /*   display: contents;*/
 
 
 }

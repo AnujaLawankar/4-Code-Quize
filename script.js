@@ -58,51 +58,54 @@ const questions = [
         optionD: "None of the above",
         correctOption: "optionB"
     },
-Why so JavaScript and Java have similar name?
-A. JavaScript is a stripped-down version of Java
-B. JavaScript’s syntax is loosely based on Java’s
-C. They both originated on the island of Java
-D. None of the above
-Ans: B
+
 
  {
-        question: "Why so JavaScript and Java have similar name?",
-        optionA: "JavaScript is a stripped-down version of Java",
-        optionB: "JavaScript’s syntax is loosely based on Java’s",
-        optionC: "They both originated on the island of Java",
+        question: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
+        optionA: "The User’s machine running a Web browser",
+        optionB: "The Web server",
+        optionC: "A central machine deep within Netscape’s corporate offices",
         optionD: "None of the above",
+        correctOption: "optionA"
+    },
+
+
+
+
+
+ {
+        question: "_____ JavaScript is also called client-side JavaScript.",
+        optionA: "Microsoft",
+        optionB: "Navigator",
+        optionC: "LiveWire",
+        optionD: " Native",
         correctOption: "optionB"
     },
 
 
 
-When a user views a page containing a JavaScript program, which machine actually executes the script?
-A. The User’s machine running a Web browser
-B. The Web server
-C. A central machine deep within Netscape’s corporate offices
-D. None of the above
-Ans: A
+ {
+        question: "_____ JavaScript is also called server-side JavaScript.",
+        optionA: "Microsoft",
+        optionB: "Navigator",
+        optionC: "LiveWire",
+        optionD: " Native",
+        correctOption: "optionC"
+    },
 
-______ JavaScript is also called client-side JavaScript.
-A. Microsoft
-B. Navigator
-C. LiveWire
-D. Native
-Ans: B
 
-__________ JavaScript is also called server-side JavaScript.
-A. Microsoft
-B. Navigator
-C. LiveWire
-D. Native
-Ans: C
 
-What are variables used for in JavaScript Programs?
-A. Storing numbers, dates, or other values
-B. Varying randomly
-C. Causing high-school algebra flashbacks
-D. None of the above
-Ans: A
+
+ {
+        question: "What are variables used for in JavaScript Programs?",
+        optionA: "Storing numbers, dates, or other values",
+        optionB: "Varying randomly",
+        optionC: "Causing high-school algebra flashbacks",
+        optionD: " None of the above",
+        correctOption: "optionA"
+    },
+
+
 
 _____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.
 A. Client-side
