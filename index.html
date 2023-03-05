@@ -38,9 +38,9 @@
         <div class="top-conatianer">
 
 
-            <button>View Score</button>
+            <button id="view-score-btn">View Score</button>
             <label id="lab1">TimeLeft:</label>
-            <p class="time" id="TimeLeft">0.00</p>
+            <p class="time" id="timeLeft">0.00</p>
 
         </div>
 
@@ -55,21 +55,23 @@
                     Are you excited to test your fundamental skills?<br>
                     Please click on "START".
                 </p>
-
-                <button class="btn" id="quiz-start" onclick="alert('Button clicked!')">START</button>
-
+                <div class="startcontainerbtn">
+                    <button class="btn" id="quiz-start" onclick="alert('Button clicked!')">START</button>
+                </div>
             </header>
             <main>
-                <section class="question-answer">
-                    <h2>Question</h2>
-                    <ul>
-                        <li><button>Answer 1 </button></li>
-                        <li><button>Answer 2 </button></li>
-                        <li><button>Answer 3 </button></li>
-                        <li><button>Answer 4 </button></li>
-                    </ul>
+                <div class="questionanswer-container">
+                    <section class="question-answer" id="questionanswer1">
+                        <h2>Question</h2>
+                        <ul>
+                            <li><button>Answer 1 </button></li>
+                            <li><button>Answer 2 </button></li>
+                            <li><button>Answer 3 </button></li>
+                            <li><button>Answer 4 </button></li>
+                        </ul>
 
 
+                </div>
 
                 </section>
                 <section class="quiz-end-screen">
