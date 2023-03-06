@@ -48,7 +48,7 @@
 
 
         <div class="middle-container">
-            <header class="quiz-intro">
+            <header class="hide" id="quizintro1">
                 <h1>Code Quiz</h1>
                 <p>
                     “Learning to code is learning to create and innovate”<br>
@@ -56,60 +56,68 @@
                     Please click on "START".
                 </p>
                 <div class="startcontainerbtn">
-                    <button class="btn" id="quiz-start" onclick="alert('Button clicked!')">START</button>
+                    <button class="btn" id="quiz-start">START</button>
                 </div>
             </header>
-            <main>
-                <div class="questionanswer-container">
-                    <section class="question-answer" id="questionanswer1">
-                        <h2>Question</h2>
-                        <ul>
-                            <li><button>Answer 1 </button></li>
-                            <li><button>Answer 2 </button></li>
-                            <li><button>Answer 3 </button></li>
-                            <li><button>Answer 4 </button></li>
-                        </ul>
+        </div>
+        <main>
+            <!--- <div class="questionanswer-container"> -->
+            <div class="hide1" id="quescont">
+                <h2 id="questionanswer1">Question</h2>
 
 
+                <section id="ansbtnid">
+                    <li><button id="ans1">Answer 1 </button></li>
+
+                    <li><button id="ans2">Answer 2 </button></li>
+
+                    <li><button id="ans3">Answer 3 </button></li>
+
+                    <li><button id="ans4">Answer 4 </button></li>
+                </section>
+            </div>
+
+
+
+
+
+
+            <div class="hide2">
+                <h2 id="quizscreen">Quiz Finished..!</h2>
+                <h3 id="yourscore"> Your Score: 00</h3>
+                <div>
+                    <label id="inputlabel">Enter Intials:</label>
+                    <input type="text" id="inputtext">
+                    <button id="end-submit">Submit</button>
                 </div>
 
-                </section>
-                <section class="quiz-end-screen">
-                    <h2>Quiz Finished..!</h2>
-                    <h3> Your Score: 00</h3>
-                    <div>
-                        <label for="">Enter Intials:</label>
-                        <input type="text">
-                        <button id="end-submit">Submit</button>
-                    </div>
+            </div>
+            <div class="hide">
 
-                </section>
-                <section class="HighScores-screen">
+                <h2 id="highscore">HighScore:</h2>
+            </div>
+            <div class="rank">
+                <ol id="ranks">
+                    <li>WH - 20</li>
+                    <li>QH - 10</li>
+                    <li>JJ - 80</li>
+                    <li>AS - 20</li>
 
-                    <h2>HighScore:</h2>
-                    <ol>
-                        <li>WH - 20</li>
-                        <li>QH - 10</li>
-                        <li>JJ - 80</li>
-                        <li>AS - 20</li>
+                </ol>
+            </div>
 
-                    </ol>
-                </section>
-            </main>
-
-
-        </div>
-
-        <div class="evaluate">
-            <label>Right</label>
-            <label>Worng</label>
-        </div>
-
+        </main>
 
 
     </div>
 
 
+    </div>
+    <!--- <div class="bottom-container"> -->
+    <div class="evaluate">
+        <label id="right">Right</label>
+        <label id="worng">Worng</label>
+    </div>
 
 
     <script src="./script.js"></script>

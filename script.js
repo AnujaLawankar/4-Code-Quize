@@ -1,7 +1,14 @@
 var timeEl = document.querySelector('.time');
-const startbtn = document.querySelector("#quiz-start");
+const startbtn = document.getElementById("quiz-start");
 const mainEl = document.getElementById("main");
+const quizIntro = document.getElementById('quizintro1');
+const questionContainerElement = document.getElementById('quescont');
+const queid = document.getElementById('questionanswer1');
+const ansid = document.getElementById('ansbtnid');
 
+
+
+startbtn.addEventListener('click', startGame);
 
 var secondsLeft = 60;
 
@@ -12,9 +19,55 @@ function init() {
 
 }
 
+
+function startGame() {
+    console.log('started');
+    startbtn.classList.add('hide');
+    quizIntro.classList.add('hide');
+    questionContainerElement.classList.remove('hide1');
+    setNextQuestion();
+    console.log("hide all");
+}
+function setNextQuestion() {
+
+}
+
+
+function showQuestion(question) {
+    queid.innerText = question.question;
+    question.answers.forEach(answer => {
+
+    });
+    //  return question;
+
+}
+
+function selectAnswer() {
+
+}
+
+const questions = [
+
+    {
+        question: "Why so JavaScript and Java have similar name?",
+        answers: [
+            { optionA: "JavaScript is a stripped-down version of Java" },
+            { optionB: "JavaScript's syntax is loosely based on Java's" },
+            { optionC: "They both originated on the island of Java" },
+            { optionD: "None of the above" },
+            { correctOption: "optionB" }
+        ]
+    }
+]
+
+
+///////////////////Create time ele////////////////////////////by js///////////
+
+
+/*
+
 function startquiz() {
     startbtn.addEventListener('click', function () {
-
         function setTime() {
             var timerInterval = setInterval(function () {
                 secondsLeft--;
@@ -30,22 +83,35 @@ function startquiz() {
         }
         setTime();
 
+        console.log('hii');
 
 
-        const que = mainEl.getElementsByClassName("questionanswer1"); // a list of matching elements, *not* the element itself
-        console.log(que); // HTMLCollection[1]
+        var x = document.getElementById('quiz-start').innerHTML;
+        function myquiz() {
+            document.getElementById('questionanswer1').innerHTML = x + 21;
+        }
 
-        const testTarget = mainEl.getElementsByClassName("que")[0]; // the first element, as we wanted
-        console.log(testTarget);
-
-    });
-
-
+        /*   const que = mainEl.getElementsByClassName("questionanswer1"); // a list of matching elements, *not* the element itself
+           console.log(que); // HTMLCollection[1]
+     
+           const testTarget = mainEl.getElementsByClassName("que")[0]; // the first element, as we wanted
+      
+           console.log(testTarget);
+    }
+    );
 }
 startquiz();
 
 
 
+
+
+
+
+
+function setNextQuestion() {
+
+}
 /*
 
 const questions = [
@@ -107,41 +173,47 @@ const questions = [
 
 
 
-_____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.
-A. Client-side
-B. Server-side
-C. Local
-D. Native
-Ans: A
-
-What should appear at the very end of your JavaScript?
-The <script LANGUAGE=”JavaScript”>tag
-A. The </script>
-B. The <script>
-C. The END statement
-D. None of the above
-Ans: A
-
-Which of the following can’t be done with client-side JavaScript?
-A. Validating a form
-B. Sending a form’s contents by email
-C. Storing the form’s contents to a database file on the server
-D. None of the above
-Ans: C
-
-Which of the following are capabilities of functions in JavaScript?
-A. Return a value
-B. Accept parameters and Return a value
-C. Accept parameters
-D. None of the above
-Ans: C
-
-Which of the following is not a valid JavaScript variable name?
-A. 2names
-B. _first_and_last_names
-C. FirstAndLast
-D. None of the above
-Ans: A
+ {
+        question: "What should appear at the very end of your JavaScript?",
+        optionA: "The </script>",
+        optionB: "The <script>",
+        optionC: "The END statement",
+        optionD: " None of the above",
+        correctOption: "optionA"
+    },
 
 
+{
+        question: "Which of the following can’t be done with client-side JavaScript?",
+        optionA: "Validating a form",
+        optionB: "Sending a form’s contents by email",
+        optionC: "Storing the form’s contents to a database file on the server",
+        optionD: " None of the above",
+        correctOption: "optionC"
+    },
+
+
+    {
+        question: "Which of the following are capabilities of functions in JavaScript?",
+        optionA: "Return a value",
+        optionB: "Accept parameters and Return a value",
+        optionC: "Accept parameters",
+        optionD: " None of the above",
+        correctOption: "optionC"
+    },
+
+{
+        question: "Which of the following is not a valid JavaScript variable name?",
+        optionA: "2names",
+        optionB: "_first_and_last_names",
+        optionC: "FirstAndLast",
+        optionD: " None of the above",
+        correctOption: "optionA"
+    },
+
+
+    function SubmitIntianl()
+    {
+
+    }
 */
