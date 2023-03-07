@@ -13,6 +13,7 @@ const savescore = document.getElementById('inputtext');
 const submitbtn = document.getElementById('end-submit');
 const answer1 = document.getElementById('ans1');
 const answer2 = document.getElementById('ans2');
+const questionindex = 0;
 
 const answer3 = document.getElementById('ans3');
 
@@ -20,39 +21,26 @@ const answer4 = document.getElementById('ans4');
 
 const questions = [
 
+
+
     {
-        question: "Why so JavaScript and Java have similar name?",
-        answer: [
-            { optionA: "JavaScript is a stripped-down version of Java" },
-            { optionB: "JavaScript's syntax is loosely based on Java's", correct: true },
-            { optionC: "They both originated on the island of Java" },
-            { optionD: "None of the above" },
-            { correctOption: "optionB" }
-        ]
+        question: 'Why so JavaScript and Java have similar name?',
+        answer: ["JavaScript is a stripped-down version of Java", "JavaScripts syntax is loosely based on Java", "They both originated on the island of Java", "None of the above"],
+        correct: "JavaScript is a stripped-down version of Java",
     },
-
-
     {
         question: "Why so JavaScript and Java have similar name?",
-        answer: [
-            { optionA: "JavaScript is a stripped-down version of Java" },
-            { optionB: "JavaScript's syntax is loosely based on Java's", correct: true },
-            { optionC: "They both originated on the island of Java" },
-            { optionD: "None of the above" },
-            { correctOption: "optionB" }
-        ]
+        answer: ["JavaScript is a stripped-down version of Java", "JavaScript's syntax is loosely based on Java's", "They both originated on the island of Java", "None of the above"],
+        correct: "JavaScript's syntax is loosely based on Java's",
+
     },
 
 
     {
         question: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
-        answer: [
-            { optionA: "The User's machine running a Web browser", correct: true },
-            { optionB: "The Web server" },
-            { optionC: "A central machine deep within Netscape's corporate offices" },
-            { optionD: "None of the above" },
-            { correctOption: "optionA" }
-        ]
+        answer: ["The User's machine running a Web browser", "The Web server", "A central machine deep within Netscape's corporate offices", "None of the above"],
+        correct: "The User's machine running a Web browser",
+
     },
 
 
@@ -61,93 +49,13 @@ const questions = [
 
     {
         question: "_____ JavaScript is also called client-side JavaScript.",
-        answer: [
-            { optionA: "Microsoft" },
-            { optionB: "Navigator", correct: true },
-            { optionC: "LiveWire" },
-            { optionD: " Native" },
-            { correctOption: "optionB" }
-        ]
-    },
+        answer: ["Microsoft", "Navigator", "LiveWire", " Native"],
+
+        correct: "Navigator",
 
 
-
-    {
-        question: "_____ JavaScript is also called server-side JavaScript.",
-        answer: [
-            { optionA: "Microsoft" },
-            { optionB: "Navigator" },
-            { optionC: "LiveWire", correct: true },
-            { optionD: " Native" },
-            { correctOption: "optionC" }
-        ]
-    },
-
-
-
-
-    {
-        question: "What are variables used for in JavaScript Programs?",
-        answer: [
-            { optionA: "Storing numbers, dates, or other values", correct: true },
-            { optionB: "Varying randomly" },
-            { optionC: "Causing high-school algebra flashbacks" },
-            { optionD: " None of the above" },
-            { correctOption: "optionA" }
-
-        ]
-    },
-
-
-
-    {
-        question: "What should appear at the very end of your JavaScript?",
-        answer: [
-            { optionA: "The </script>", correct: true },
-            { optionB: "The <script>" },
-            { optionC: "The END statement" },
-            { optionD: " None of the above" },
-            { correctOption: "optionA" }
-        ]
-    },
-
-
-    {
-        question: "Which of the following can't be done with client-side JavaScript?",
-        answer: [
-
-            { optionA: "Validating a form" },
-            { optionB: "Sending a form’s contents by email" },
-            { optionC: "Storing the form’s contents to a database file on the server", correct: true },
-            { optionD: " None of the above" },
-            { correctOption: "optionC" }
-        ]
-    },
-
-
-    {
-        question: "Which of the following are capabilities of functions in JavaScript?",
-        answer: [
-            { optionA: "Return a value" },
-            { optionB: "Accept parameters and Return a value" },
-            { optionC: "Accept parameters", correct: true },
-            { optionD: " None of the above" },
-            { correctOption: "optionC" }
-        ]
-    },
-
-    {
-        question: "Which of the following is not a valid JavaScript variable name?",
-        answer: [
-            { optionA: "2names", correct: true },
-            { optionB: "_first_and_last_names" },
-            { optionC: "FirstAndLast" },
-            { optionD: " None of the above" },
-            { correctOption: "optionA" }
-        ]
     },
 ]
-
 
 startbtn.addEventListener('click', startGame);
 
@@ -191,28 +99,75 @@ function startGame() {
     questionContainerElement.classList.remove('hide');
     // setNextQuestion();
     console.log("hide all");
+    /*  showQuestion(questions[0]);
+      selectAnswer1(questions[0].answer[0]);
+      selectAnswer2(questions[0].answer[1]);
+      selectAnswer3(questions[0].answer[2]);
+      selectAnswer4(questions[0].answer[3]);*/
     showQuestion(questions[0]);
-    selectAnswer1(questions[0]);
-    selectAnswer2(questions[0]);
-    selectAnswer3(questions[0]);
-    selectAnswer4(questions[0]);
+    makeAnswer();
+
+
+}
+
+/*function getQuestion() {
+    // get current question object from array
+    var currentQuestion = questions[currentQuestionIndex];
+  
+    // update title with current question
+    var titleEl [questionanswer1] = document.getElementById('question-title');
+    titleEl.textContent = currentQuestion.title;
+  
+    // clear out any old question choices
+    choicesEl.innerHTML = '';
+  
+    // loop over choices
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
+      // create new button for each choice
+      var choice = currentQuestion.choices[i];
+      var choiceNode = document.createElement('button');
+      choiceNode.setAttribute('class', 'choice');
+      choiceNode.setAttribute('value', choice);
+  
+      choiceNode.textContent = i + 1 + '. ' + choice;
+  
+      // display on the page
+      choicesEl.appendChild(choiceNode);
+    }
+  }*/
+
+function makeAnswer(questions) {
+
+
+
+    answer1.innerHTML = "";
+
+
+    for (var i = 0; i < questions.answer; i++) {
+
+        answer1.append(answer1[i]);
+        console.log(answer1[i]);
+
+    }
+    answer1.textContent = i + 1 + '.' + answer1;
 
 }
 
 
 function showQuestion(questions) {
 
+    for (var x = 0; x < questions.question; x++) {
+        queid.textContent = questions.question[x];
 
-    queid.textContent = questions.question;
-    //questions.answers.forEach(answer => {
 
-    console.log(queid);
+        console.log(queid);
+    }
 
-    rightid.classList.remove('hide');
-    worngid.classList.remove('hide');
+    // rightid.classList.remove('hide');
+    //worngid.classList.remove('hide');
 }
 
-
+/*
 
 
 function selectAnswer1(questions) {
@@ -278,10 +233,10 @@ function selectAnswer4(questions) {
     answer4.addEventListener('click', submitIntianl());
 }
 
+*/
 
 
-
-function submitIntianl() {
+/*function submitIntianl() {
 
     //   middleclass.classList.remove('hide');
     //  score.classList.remove('hide');
@@ -295,10 +250,15 @@ function submitIntianl() {
     //  score.textContent = savescore;
 
 
+    var currentQuizScore = localStorage.getItem("inputtext"),
+        userInitials = document.getElementById('initials-input').value,
+        highscoreObj = { name: userInitials, score: currentQuizScore },
+        newArr = [],
+        existingScores = getExistingScores(),
+        selectedQuiz = localStorage.getItem("selectedQuiz");
 
 
-
-}
+}*/
 
 
 
