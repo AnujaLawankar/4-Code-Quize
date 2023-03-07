@@ -8,27 +8,62 @@
 
 3. After clicking on start button first question for the code quiz will also appeared.
 
-4. Whenever user click on question's answer. If the question was right  then in the bottom of web page displayed "Right" and if the answer was worng then in the bottom of web page diplayed "Worng" in this way elvaulation was done durning the user sloving the quiz.
+4. Whenever user click on question's answer. If the question was right  then in the bottom of web page displayed "Right" and 
+   if the answer was wrong then in the bottom of web page displayed  "Wrong" in this way evaluation was done during the user solving the quiz.
 
 5. After click on question's answer the user was also redirected to the another question. The another question was displayed.
 
-6. If the timer is passed "0". Then the timer was stopped and the user's code quiz score was dipalyed.
+6. If the timer is passed "0 sec". Then the timer was stopped and the user's code quiz score was displayed.
 
-7. If the user selected worng answer. Then the time was subtracted from the total time remaining.
+7. If the user selected wrong answer. Then the time was subtracted from the total time remaining.
 
-8. After completed code quiz, the user could also save thier final score, by adding thier initals and clicking on submit button.
+8. After completed code quiz, the user could also save their final score, by adding their initials and clicking on submit button.
 
-9. If the user want to see high score then the highiest score among the students will displayed.
+9. If the user want to see high score then the high  score among the students will displayed.
 
-## URLs:-
+
+##Steps I followed:-
+
+1.   First I created the "New Repository" i.e "assignment-module-4" in my GitHub setup.
+
+2.   In GitBash I navigate to the repository where I have to clone my "assignment-module-4" repository. Using "cd" command.
+
+3.   Then I used "git clone <ssh key>" of "assignment-module-4" and clone the repository.
+  
+4.   Then I created "index.html", "style.css" and "README" files. Using touch command.
+
+5.    Run "code ." command to open VS.
+
+6.    Executed the code.
+
+7.    After that, I added code to GitHub by using "git add -A" command on Gitbash. 
+ 
+8.    Commit the code and add commit message by using "git commit -m <message>".
+
+9.   Pull code by using "git pull origin main".
+
+10.  Push the code by using "git push origin main".
+
+11.  All the final code push in my "assignment-module-4" repository.
+
+12.  For deploy the project , Navigated to "settings tab".
+
+13.  Navigated to pages, in the branch add "main" and "root" .
+
+14.  Finally, "URL" for my first webpage is popup.
+ 
+
+##URLs:-
 Here, you can find the webpage.
 
-Code Quiz web application's URL:- 
-
-
+Code Quiz web application's URL:- https://anujalawankar.github.io/assignment-module-4/
 
 Here, you can find the GitHub URL:-
-GitHub URL:-
+GitHub URL:- https://github.com/AnujaLawankar/assignment-module-4
+
+
+
+
 
 
 
