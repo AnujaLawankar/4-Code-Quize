@@ -5,7 +5,148 @@ const quizIntro = document.getElementById('quizintro1');
 const questionContainerElement = document.getElementById('quescont');
 const queid = document.getElementById('questionanswer1');
 const ansid = document.getElementById('ansbtnid');
+const middleclass = document.getElementById('middle');
+const rightid = document.getElementById('right');
+const worngid = document.getElementById('worng');
+const score = document.getElementById('yourscore');
+const savescore = document.getElementById('inputtext');
+const submitbtn = document.getElementById('end-submit');
+const answer1 = document.getElementById('ans1');
+const answer2 = document.getElementById('ans2');
 
+const answer3 = document.getElementById('ans3');
+
+const answer4 = document.getElementById('ans4');
+
+const questions = [
+
+    {
+        question: "Why so JavaScript and Java have similar name?",
+        answer: [
+            { optionA: "JavaScript is a stripped-down version of Java" },
+            { optionB: "JavaScript's syntax is loosely based on Java's", correct: true },
+            { optionC: "They both originated on the island of Java" },
+            { optionD: "None of the above" },
+            { correctOption: "optionB" }
+        ]
+    },
+
+
+    {
+        question: "Why so JavaScript and Java have similar name?",
+        answer: [
+            { optionA: "JavaScript is a stripped-down version of Java" },
+            { optionB: "JavaScript's syntax is loosely based on Java's", correct: true },
+            { optionC: "They both originated on the island of Java" },
+            { optionD: "None of the above" },
+            { correctOption: "optionB" }
+        ]
+    },
+
+
+    {
+        question: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
+        answer: [
+            { optionA: "The User's machine running a Web browser", correct: true },
+            { optionB: "The Web server" },
+            { optionC: "A central machine deep within Netscape's corporate offices" },
+            { optionD: "None of the above" },
+            { correctOption: "optionA" }
+        ]
+    },
+
+
+
+
+
+    {
+        question: "_____ JavaScript is also called client-side JavaScript.",
+        answer: [
+            { optionA: "Microsoft" },
+            { optionB: "Navigator", correct: true },
+            { optionC: "LiveWire" },
+            { optionD: " Native" },
+            { correctOption: "optionB" }
+        ]
+    },
+
+
+
+    {
+        question: "_____ JavaScript is also called server-side JavaScript.",
+        answer: [
+            { optionA: "Microsoft" },
+            { optionB: "Navigator" },
+            { optionC: "LiveWire", correct: true },
+            { optionD: " Native" },
+            { correctOption: "optionC" }
+        ]
+    },
+
+
+
+
+    {
+        question: "What are variables used for in JavaScript Programs?",
+        answer: [
+            { optionA: "Storing numbers, dates, or other values", correct: true },
+            { optionB: "Varying randomly" },
+            { optionC: "Causing high-school algebra flashbacks" },
+            { optionD: " None of the above" },
+            { correctOption: "optionA" }
+
+        ]
+    },
+
+
+
+    {
+        question: "What should appear at the very end of your JavaScript?",
+        answer: [
+            { optionA: "The </script>", correct: true },
+            { optionB: "The <script>" },
+            { optionC: "The END statement" },
+            { optionD: " None of the above" },
+            { correctOption: "optionA" }
+        ]
+    },
+
+
+    {
+        question: "Which of the following can't be done with client-side JavaScript?",
+        answer: [
+
+            { optionA: "Validating a form" },
+            { optionB: "Sending a form’s contents by email" },
+            { optionC: "Storing the form’s contents to a database file on the server", correct: true },
+            { optionD: " None of the above" },
+            { correctOption: "optionC" }
+        ]
+    },
+
+
+    {
+        question: "Which of the following are capabilities of functions in JavaScript?",
+        answer: [
+            { optionA: "Return a value" },
+            { optionB: "Accept parameters and Return a value" },
+            { optionC: "Accept parameters", correct: true },
+            { optionD: " None of the above" },
+            { correctOption: "optionC" }
+        ]
+    },
+
+    {
+        question: "Which of the following is not a valid JavaScript variable name?",
+        answer: [
+            { optionA: "2names", correct: true },
+            { optionB: "_first_and_last_names" },
+            { optionC: "FirstAndLast" },
+            { optionD: " None of the above" },
+            { correctOption: "optionA" }
+        ]
+    },
+]
 
 
 startbtn.addEventListener('click', startGame);
@@ -21,199 +162,127 @@ function init() {
 
 
 function startGame() {
+
+
+    function setTime() {
+        var timerInterval = setInterval(function () {
+            secondsLeft--;
+            timeEl.textContent = secondsLeft + "sec";
+
+            if (secondsLeft === 0) {
+                // Stops execution of action at set interval
+                clearInterval(timerInterval);
+                return;
+            }
+
+        }, 1000);
+    }
+    setTime();
+
+
+
+
     console.log('started');
     startbtn.classList.add('hide');
     quizIntro.classList.add('hide');
-    questionContainerElement.classList.remove('hide1');
-    setNextQuestion();
+    middleclass.classList.add('hide');
+    questionContainerElement.classList.remove('hide');
+    // setNextQuestion();
     console.log("hide all");
-}
-function setNextQuestion() {
+    showQuestion(questions[0]);
+    selectAnswer1(questions[0]);
+    selectAnswer2(questions[0]);
+    selectAnswer3(questions[0]);
+    selectAnswer4(questions[0]);
 
 }
 
 
-function showQuestion(question) {
-    queid.innerText = question.question;
-    question.answers.forEach(answer => {
+function showQuestion(questions) {
 
-    });
-    //  return question;
 
-}
+    queid.textContent = questions.question;
+    //questions.answers.forEach(answer => {
 
-function selectAnswer() {
+    console.log(queid);
 
 }
 
-const questions = [
-
-    {
-        question: "Why so JavaScript and Java have similar name?",
-        answers: [
-            { optionA: "JavaScript is a stripped-down version of Java" },
-            { optionB: "JavaScript's syntax is loosely based on Java's" },
-            { optionC: "They both originated on the island of Java" },
-            { optionD: "None of the above" },
-            { correctOption: "optionB" }
-        ]
-    }
-]
-
-
-///////////////////Create time ele////////////////////////////by js///////////
-
-
-/*
-
-function startquiz() {
-    startbtn.addEventListener('click', function () {
-        function setTime() {
-            var timerInterval = setInterval(function () {
-                secondsLeft--;
-                timeEl.textContent = secondsLeft + "sec";
-
-                if (secondsLeft === 0) {
-                    // Stops execution of action at set interval
-                    clearInterval(timerInterval);
-                    return;
-                }
-
-            }, 1000);
-        }
-        setTime();
-
-        console.log('hii');
-
-
-        var x = document.getElementById('quiz-start').innerHTML;
-        function myquiz() {
-            document.getElementById('questionanswer1').innerHTML = x + 21;
-        }
-
-        /*   const que = mainEl.getElementsByClassName("questionanswer1"); // a list of matching elements, *not* the element itself
-           console.log(que); // HTMLCollection[1]
-     
-           const testTarget = mainEl.getElementsByClassName("que")[0]; // the first element, as we wanted
-      
-           console.log(testTarget);
-    }
-    );
-}
-startquiz();
 
 
 
+function selectAnswer1(questions) {
+    answer1.textContent = questions.answer[0];
+    answer1.textContent = questions.answer[1];
+    answer1.textContent = questions.answer[2];
+    answer1.textContent = questions.answer[3];
+
+    console.log(answer1);
 
 
-
-
-
-function setNextQuestion() {
 
 }
-/*
 
-const questions = [
-
-    {
-        question: "Why so JavaScript and Java have similar name?",
-        optionA: "JavaScript is a stripped-down version of Java",
-        optionB: "JavaScript’s syntax is loosely based on Java’s",
-        optionC: "They both originated on the island of Java",
-        optionD: "None of the above",
-        correctOption: "optionB"
-    },
-
-
- {
-        question: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
-        optionA: "The User’s machine running a Web browser",
-        optionB: "The Web server",
-        optionC: "A central machine deep within Netscape’s corporate offices",
-        optionD: "None of the above",
-        correctOption: "optionA"
-    },
+function selectAnswer2(questions) {
+    answer2.textContent = questions.answer[0];
+    answer2.textContent = questions.answer[1];
+    answer2.textContent = questions.answer[2];
+    answer2.textContent = questions.answer[3];
+    console.log(answer2);
 
 
 
+}
 
-
- {
-        question: "_____ JavaScript is also called client-side JavaScript.",
-        optionA: "Microsoft",
-        optionB: "Navigator",
-        optionC: "LiveWire",
-        optionD: " Native",
-        correctOption: "optionB"
-    },
+function selectAnswer3(questions) {
+    answer3.textContent = questions.answer[0];
+    answer3.textContent = questions.answer[1];
+    answer3.textContent = questions.answer[2];
+    answer3.textContent = questions.answer[3];
+    console.log(answer3);
 
 
 
- {
-        question: "_____ JavaScript is also called server-side JavaScript.",
-        optionA: "Microsoft",
-        optionB: "Navigator",
-        optionC: "LiveWire",
-        optionD: " Native",
-        correctOption: "optionC"
-    },
+}
+
+function selectAnswer4(questions) {
+    answer4.textContent = questions.answer[0];
+    answer4.textContent = questions.answer[1];
+    answer4.textContent = questions.answer[2];
+    answer4.textContent = questions.answer[3];
+    console.log(answer4);
+
+
+
+}
+
+
+
+score.classList.remove('hide');
+savescore.classList.remove('hide');
+submitbtn.classList.remove('hide');
 
 
 
 
- {
-        question: "What are variables used for in JavaScript Programs?",
-        optionA: "Storing numbers, dates, or other values",
-        optionB: "Varying randomly",
-        optionC: "Causing high-school algebra flashbacks",
-        optionD: " None of the above",
-        correctOption: "optionA"
-    },
+submitbtn.addEventListener('click', submitIntianl());
+
+
+function submitIntianl() {
 
 
 
- {
-        question: "What should appear at the very end of your JavaScript?",
-        optionA: "The </script>",
-        optionB: "The <script>",
-        optionC: "The END statement",
-        optionD: " None of the above",
-        correctOption: "optionA"
-    },
+    var savescore = localStorage.getItem("inputtext");
+    score.textContent = savescore;
 
 
-{
-        question: "Which of the following can’t be done with client-side JavaScript?",
-        optionA: "Validating a form",
-        optionB: "Sending a form’s contents by email",
-        optionC: "Storing the form’s contents to a database file on the server",
-        optionD: " None of the above",
-        correctOption: "optionC"
-    },
 
 
-    {
-        question: "Which of the following are capabilities of functions in JavaScript?",
-        optionA: "Return a value",
-        optionB: "Accept parameters and Return a value",
-        optionC: "Accept parameters",
-        optionD: " None of the above",
-        correctOption: "optionC"
-    },
 
-{
-        question: "Which of the following is not a valid JavaScript variable name?",
-        optionA: "2names",
-        optionB: "_first_and_last_names",
-        optionC: "FirstAndLast",
-        optionD: " None of the above",
-        correctOption: "optionA"
-    },
+}
 
 
-    function SubmitIntianl()
-    {
 
-    }
-*/
+
+
+

@@ -186,16 +186,17 @@ main {}
 
     display: flex;
     justify-content: space-between;
+    justify-items: center;
 
 }
 
 #quescont {
     /* display: contents;*/
-    display: none;
+    /*   display: none;*/
 }
 
 .question-answer {
-    display: none;
+    /* display: none;*/
 }
 
 #questionanswer1 {
@@ -207,13 +208,65 @@ main {}
 }
 
 #ansbtnid {
-    padding-left: 200px;
+
     color: var(--color);
     font-size: 40px;
-    /*   background-color: rgb(192, 43, 68);*/
+
     border-radius: 10px;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
+}
+
+#ans1 {
+
+
+    color: var(--color);
+    font-size: 40px;
+    background-color: rgb(192, 43, 68);
+    border-radius: 10px;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+#ans2 {
+
+
+    color: var(--color);
+    font-size: 40px;
+    background-color: rgb(192, 43, 68);
+    border-radius: 10px;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+#ans3 {
+
+
+    color: var(--color);
+    font-size: 40px;
+    background-color: rgb(192, 43, 68);
+    border-radius: 10px;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+#ans4 {
+
+
+    color: var(--color);
+    font-size: 40px;
+    background-color: rgb(192, 43, 68);
+    border-radius: 10px;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+
+
 }
 
 
@@ -225,7 +278,19 @@ li {
 
 
 
-.question-answer button:hover {
+#ans1:hover {
+    background-color: yellow;
+}
+
+#ans2:hover {
+    background-color: yellow;
+}
+
+#ans3:hover {
+    background-color: yellow;
+}
+
+#ans4:hover {
     background-color: yellow;
 }
 
@@ -267,22 +332,23 @@ h3 {
 }
 
 .quiz-end-screen {
-    display: none;
-    /*  display: contents;*/
+    /* display: none;*/
+    display: contents;
 }
 
 
 .HighScores-screen {
-    display: none;
+    /* display: none;
     /* display: contents;*/
 }
 
 .rank {
-    display: none;
+    /* display: none;
     /*  display: contents;*/
 }
 
 #ranks {
+    display: none;
     padding-left: 300px;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
@@ -339,20 +405,6 @@ h3 {
 
 }
 
-.hide1 {
-    display: none;
-
-}
-
-.hide2 {
-    display: none;
-
-}
-
-.hide3 {
-    display: none;
-
-}
 
 /* Small smartphones - image placeholders change color */
 @media screen and (max-width: 576px) {
