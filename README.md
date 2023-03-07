@@ -51,6 +51,6 @@ N/A
 ## Assets
 
 The following image demonstrates the website appearance:
-1. Asking user to enter the password range.
-![Website](./Develop/assets/screenshot1.png)
+1. 
+![Website](./assets/images/screenshot1.png)
 
