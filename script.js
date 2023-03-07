@@ -186,6 +186,8 @@ function startGame() {
     startbtn.classList.add('hide');
     quizIntro.classList.add('hide');
     middleclass.classList.add('hide');
+    rightid.classList.add('hide');
+    worngid.classList.add('hide');
     questionContainerElement.classList.remove('hide');
     // setNextQuestion();
     console.log("hide all");
@@ -206,19 +208,28 @@ function showQuestion(questions) {
 
     console.log(queid);
 
+    rightid.classList.remove('hide');
+    worngid.classList.remove('hide');
 }
 
 
 
 
 function selectAnswer1(questions) {
+
+
     answer1.textContent = questions.answer[0];
     answer1.textContent = questions.answer[1];
     answer1.textContent = questions.answer[2];
     answer1.textContent = questions.answer[3];
 
-    console.log(answer1);
+    for (var x = 0; x <= 4; x++) {
+        const jsonString1 = JSON.stringify(questions.answer[x]);
+        console.log(jsonString1);
+    }
+    // answer1.append(jsonString1);
 
+    answer1.addEventListener('click', submitIntianl());
 
 
 }
@@ -230,7 +241,11 @@ function selectAnswer2(questions) {
     answer2.textContent = questions.answer[3];
     console.log(answer2);
 
-
+    for (var x = 0; x <= 4; x++) {
+        const jsonString = JSON.stringify(questions.answer[x]);
+        console.log(jsonString);
+    }
+    answer2.addEventListener('click', submitIntianl());
 
 }
 
@@ -240,8 +255,11 @@ function selectAnswer3(questions) {
     answer3.textContent = questions.answer[2];
     answer3.textContent = questions.answer[3];
     console.log(answer3);
-
-
+    for (var x = 0; x <= 4; x++) {
+        const jsonString = JSON.stringify(questions.answer[x]);
+        console.log(jsonString);
+    }
+    answer3.addEventListener('click', submitIntianl());
 
 }
 
@@ -252,28 +270,29 @@ function selectAnswer4(questions) {
     answer4.textContent = questions.answer[3];
     console.log(answer4);
 
+    for (var x = 0; x <= 4; x++) {
+        const jsonString = JSON.stringify(questions.answer[x]);
+        console.log(jsonString);
+    }
 
-
+    answer4.addEventListener('click', submitIntianl());
 }
 
 
 
-score.classList.remove('hide');
-savescore.classList.remove('hide');
-submitbtn.classList.remove('hide');
-
-
-
-
-submitbtn.addEventListener('click', submitIntianl());
-
 
 function submitIntianl() {
 
+    //   middleclass.classList.remove('hide');
+    //  score.classList.remove('hide');
+    //  savescore.classList.remove('hide');
+    //  submitbtn.classList.remove('hide');
+
+    //  submitbtn.addEventListener('click', submitIntianl());
 
 
-    var savescore = localStorage.getItem("inputtext");
-    score.textContent = savescore;
+    //   var savescore = localStorage.getItem("inputtext");
+    //  score.textContent = savescore;
 
 
 

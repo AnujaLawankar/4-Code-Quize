@@ -11,25 +11,7 @@
 
 <body>
 
-    <!---- <header>
-        <div class="header">
-            <h1>Code Quiz</h1>
-            <p>
-                “Learning to code is learning to create and innovate”<br>
-                Are you excited to test your fundamental skills?<br>
-                Please click on "START".
-            </p>
-        </div>
-        <div class="button1">
-            <button class="btn" onclick="alert('Button clicked!')">START</button>
-        </div>
-    </header>
-    <main>
 
-    </main>
-    <footer>
-
-    </footer> -->
 
     <div class="outer-contianer">
 
@@ -79,48 +61,49 @@
             </div>
 
 
+    </div>
 
 
+    <div class="hide">
+        <h2 id="quizscreen">Quiz Finished..!</h2>
+        <h3 id="yourscore"> Your Score: 00</h3>
+        <div>
+            <label id="inputlabel">Enter Intials:</label>
+            <input type="text" id="inputtext">
+            <button id="end-submit">Submit</button>
 
-            <div class="hide">
-                <h2 id="quizscreen">Quiz Finished..!</h2>
-                <h3 id="yourscore"> Your Score: 00</h3>
-                <div>
-                    <label id="inputlabel">Enter Intials:</label>
-                    <input type="text" id="inputtext">
-                    <button id="end-submit">Submit</button>
 
+        </div>
 
-                </div>
+    </div>
+    <div class="hide">
 
-            </div>
-            <div class="hide">
+        <h2 id="highscore">HighScore:</h2>
 
-                <h2 id="highscore">HighScore:</h2>
-            </div>
-            <div class="rank">
-                <ol id="ranks">
-                    <li>WH - 20</li>
-                    <li>QH - 10</li>
-                    <li>JJ - 80</li>
-                    <li>AS - 20</li>
+        <div class="rank">
+            <ol id="ranks">
+                <li>WH - 20</li>
+                <li>QH - 10</li>
+                <li>JJ - 80</li>
+                <li>AS - 20</li>
 
-                </ol>
-            </div>
-
-        </main>
+            </ol>
+        </div>
+    </div>
+    </main>
 
 
     </div>
 
 
-    </div>
-    <!--- <div class="bottom-container"> -->
-    <div class="evaluate">
-        <label id="right">Right</label>
-        <label id="worng">Worng</label>
-    </div>
 
+    <!---  -->
+    <div class="hide">
+        <div class="bottom-container">
+            <label id="right">Right</label>
+            <label id="worng">Worng</label>
+        </div>
+    </div>
 
     <script src="./script.js"></script>
 </body>

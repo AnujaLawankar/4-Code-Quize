@@ -333,7 +333,7 @@ h3 {
 
 .quiz-end-screen {
     /* display: none;*/
-    display: contents;
+    /* display: contents;*/
 }
 
 
@@ -348,7 +348,7 @@ h3 {
 }
 
 #ranks {
-    display: none;
+    /* display: none;*/
     padding-left: 300px;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
@@ -358,15 +358,9 @@ h3 {
 
 
 
-.evaluate {
-    display: flex;
-    /* display: contents;*/
-    display: none;
 
-    align-items: center;
 
-}
-
+/*
 .evaluate::before {
 
     content: "";
@@ -379,7 +373,7 @@ h3 {
     top: 50%;
     transform: rotate(90deg);
 
-}
+}*/
 
 #right {
     font-size: medium;
