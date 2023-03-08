@@ -4,8 +4,7 @@
 
 }
 
-body,
-html {
+body {
 
     background-color: #3cbbc4;
 
@@ -42,7 +41,8 @@ html {
 
 
 #timeLeft {
-    padding-right: 70px;
+    padding-top: 15px;
+    padding-right: 150px;
     float: right;
     font-size: 30px;
     color: var(--color);
@@ -116,7 +116,7 @@ h2 {
 
 .questionanswer-container {
 
-    margin: 5px;
+    margin: 10px;
     display: flex;
     justify-content: space-between;
     justify-items: center;
@@ -127,6 +127,8 @@ h2 {
 #quescont {
     /* display: contents;*/
     /*   display: none;*/
+    margin-left: 200px;
+    margin-top: 100px;
 }
 
 .question-answer {
@@ -142,7 +144,7 @@ h2 {
 }
 
 #ansbtnid {
-
+    display: inline-grid;
     color: var(--color);
     font-size: 40px;
 
@@ -248,6 +250,7 @@ h2 {
 }
 
 
+
 /*
 .evaluate::before {
 
@@ -272,14 +275,14 @@ h2 {
     font-family: 'Times New Roman', Times, serif;
 }
 
-#worng {
+#wrong {
     font-size: medium;
     color: var(--color);
     padding-top: 50px;
     padding-left: 700px;
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
-    justify-content: end;
+
 }
 
 .hide {
@@ -301,6 +304,22 @@ h2 {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
+
+p {
+    color: var(--color);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+label {
+    color: var(--color);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 
 /* Small smartphones - image placeholders change color */
 @media screen and (max-width: 576px) {

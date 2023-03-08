@@ -1,3 +1,4 @@
+//Fetching id's of elements
 var timeEl = document.querySelector('.time');
 const startbtn = document.getElementById("quiz-start");
 const mainEl = document.getElementById("main");
@@ -7,7 +8,7 @@ const queid = document.getElementById('questionanswer1');
 const ansid = document.getElementById('ansbtnid');
 const middleclass = document.getElementById('middle');
 const rightid = document.getElementById('right');
-const worngid = document.getElementById('worng');
+const wrongid = document.getElementById('wrong');
 const finalscore = document.getElementById('yourscore');
 const initiallabel = document.getElementById('inputlabel');
 const initialinput = document.getElementById('inputtext');
@@ -21,7 +22,7 @@ const quizfin = document.getElementById('quizfinish');
 
 var questionindex = 0;
 
-
+//Declare questions and answer array
 
 const questions = [
 
@@ -64,24 +65,17 @@ const questions = [
         correct: "Function/Method",
     },
 ]
-
+//eventlistner on start button
 startbtn.addEventListener('click', startGame);
 
 var secondsLeft = 60;
 
-
-
-function init() {
-
-
-}
-
-
+//start the code quiz function
 function startGame() {
 
-
+    //set the timer
     function setTime() {
-        var timerInterval = setInterval(function () {
+        timerInterval = setInterval(function () {
             secondsLeft--;
             timeEl.textContent = secondsLeft + "sec";
 
@@ -97,13 +91,13 @@ function startGame() {
 
 
 
-
+    //hide and unhide elements by id's
     console.log('started');
     startbtn.classList.add('hide');
     quizIntro.classList.add('hide');
     middleclass.classList.add('hide');
     rightid.classList.add('hide');
-    worngid.classList.add('hide');
+    wrongid.classList.add('hide');
     questionContainerElement.classList.remove('hide');
 
     console.log("hide all");
@@ -114,7 +108,7 @@ function startGame() {
 
 }
 
-
+//questions and asnwer  will displayed in this function
 function showQuestion() {
 
     ansid.innerHTML = "";
@@ -165,7 +159,7 @@ function showQuestion() {
 
 }
 
-
+//evaluation of right or wrong answer will done here
 function checkcorrect(event) {
     console.log("testing", event.target.value);
 
@@ -175,7 +169,7 @@ function checkcorrect(event) {
 
 
     if (choice === currentQuestion.correct) {
-        worngid.classList.add('hide');
+        wrongid.classList.add('hide');
 
         rightid.classList.remove('hide');
         console.log(rightid);
@@ -194,24 +188,24 @@ function checkcorrect(event) {
     }
     else {
         rightid.classList.add('hide');
-        worngid.classList.remove('hide');
-        console.log(worngid);
+        wrongid.classList.remove('hide');
+        console.log(wrongid);
         setTimeout(() => {
 
-            worngid.classList.add('hide');
+            wrongid.classList.add('hide');
             questionindex++;
             showQuestion();
             console.log("score is : " + score);
 
         }, 1000);
     }
-    // }
+
 
 
 
 }
 
-
+//function will display score and allow to enter inital of users
 function quizfinished() {
 
 
@@ -223,8 +217,8 @@ function quizfinished() {
     quizfin.classList.remove('hide');
     quizfin.innerHTML = "";
 
-    quizfin.innerHTML = "<h1 id='title'>Quiz Ended</h1><p>Your final score is" + " " + score + " out of " + questions.length + ".</p>" +
-        "Enter your initials: <input id='initials' type='text'><br><br>" +
+    quizfin.innerHTML = "<h1 id='title'>Quiz Ended</h1><p id='finalscorelabel'>Your final score is" + " " + score + " out of " + questions.length + ".</p>" +
+        "<label id='labelintial'>Enter your initials</label>: <input id='initials' type='text'><br><br>" +
         "<button id='end-submit'>Submit Score</button>";
 
 
@@ -232,8 +226,7 @@ function quizfinished() {
 
 }
 
-
-
+//function will store inital with scores
 function submitIntianl() {
 
 
@@ -246,6 +239,7 @@ function submitIntianl() {
 }
 
 
+//function will display high score with inital and score is arrage in sorted order.
 function showHighScores() {
     let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     highScores.sort((a, b) => b.score - a.score);
@@ -256,7 +250,7 @@ function showHighScores() {
     quizfin.innerHTML += "<br><button id='startAgainButton'>Start Again</button>";
     document.getElementById("startAgainButton").addEventListener("click", resetQuiz);
 }
-
+//function will restart the code quize
 function resetQuiz() {
     currentQuestion = 0;
     score = 0;
