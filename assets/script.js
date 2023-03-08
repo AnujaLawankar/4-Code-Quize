@@ -8,52 +8,60 @@ const ansid = document.getElementById('ansbtnid');
 const middleclass = document.getElementById('middle');
 const rightid = document.getElementById('right');
 const worngid = document.getElementById('worng');
-const score = document.getElementById('yourscore');
-const savescore = document.getElementById('inputtext');
-const submitbtn = document.getElementById('end-submit');
-const answer1 = document.getElementById('ans1');
-const answer2 = document.getElementById('ans2');
-const questionindex = 0;
+const finalscore = document.getElementById('yourscore');
+const initiallabel = document.getElementById('inputlabel');
+const initialinput = document.getElementById('inputtext');
 
-const answer3 = document.getElementById('ans3');
 
-const answer4 = document.getElementById('ans4');
+let timerInterval;
+var score = 0;
+
+
+const quizfin = document.getElementById('quizfinish');
+
+var questionindex = 0;
+
+
 
 const questions = [
 
 
 
     {
-        question: 'Why so JavaScript and Java have similar name?',
+        question: 'Q:1 Why so JavaScript and Java have similar name?',
         answer: ["JavaScript is a stripped-down version of Java", "JavaScripts syntax is loosely based on Java", "They both originated on the island of Java", "None of the above"],
-        correct: "JavaScript is a stripped-down version of Java",
-    },
-    {
-        question: "Why so JavaScript and Java have similar name?",
-        answer: ["JavaScript is a stripped-down version of Java", "JavaScript's syntax is loosely based on Java's", "They both originated on the island of Java", "None of the above"],
-        correct: "JavaScript's syntax is loosely based on Java's",
-
-    },
-
-
-    {
-        question: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
-        answer: ["The User's machine running a Web browser", "The Web server", "A central machine deep within Netscape's corporate offices", "None of the above"],
-        correct: "The User's machine running a Web browser",
-
+        correct: 'JavaScripts syntax is loosely based on Java',
     },
 
 
 
+    {
+        question: "Q:2 Which of the following scoping type does JavaScript use?",
+        answer: ["Sequential", "Lexical", " Segmental", "Literal"],
+        correct: "Lexical",
+
+
+    },
 
 
     {
-        question: "_____ JavaScript is also called client-side JavaScript.",
+        question: "Q:3 JavaScript is also called client-side JavaScript.",
         answer: ["Microsoft", "Navigator", "LiveWire", " Native"],
 
         correct: "Navigator",
 
 
+    },
+    {
+        question: "Q:4 Arrays in JavaScript are defined by which of the following statements?",
+        answer: [" It is an ordered list of values", "It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"],
+        correct: "It is an ordered list of values",
+    },
+
+    {
+        question: "Q:5 Which of the following can be used to call a JavaScript Code Snippet?",
+        answer: ["Function/Method", "Preprocessor", "Triggering Event", "RMI"],
+        correct: "Function/Method",
     },
 ]
 
@@ -97,171 +105,165 @@ function startGame() {
     rightid.classList.add('hide');
     worngid.classList.add('hide');
     questionContainerElement.classList.remove('hide');
-    // setNextQuestion();
+
     console.log("hide all");
-    /*  showQuestion(questions[0]);
-      selectAnswer1(questions[0].answer[0]);
-      selectAnswer2(questions[0].answer[1]);
-      selectAnswer3(questions[0].answer[2]);
-      selectAnswer4(questions[0].answer[3]);*/
-    showQuestion(questions[0]);
-    makeAnswer();
+
+    showQuestion();
+
 
 
 }
 
-/*function getQuestion() {
-    // get current question object from array
-    var currentQuestion = questions[currentQuestionIndex];
-  
-    // update title with current question
-    var titleEl [questionanswer1] = document.getElementById('question-title');
-    titleEl.textContent = currentQuestion.title;
-  
-    // clear out any old question choices
-    choicesEl.innerHTML = '';
-  
-    // loop over choices
-    for (var i = 0; i < currentQuestion.choices.length; i++) {
-      // create new button for each choice
-      var choice = currentQuestion.choices[i];
-      var choiceNode = document.createElement('button');
-      choiceNode.setAttribute('class', 'choice');
-      choiceNode.setAttribute('value', choice);
-  
-      choiceNode.textContent = i + 1 + '. ' + choice;
-  
-      // display on the page
-      choicesEl.appendChild(choiceNode);
-    }
-  }*/
 
-function makeAnswer(questions) {
+function showQuestion() {
 
+    ansid.innerHTML = "";
 
+    if (questionindex >= questions.length) {
 
-    answer1.innerHTML = "";
+        return quizfinished();
 
-
-    for (var i = 0; i < questions.answer; i++) {
-
-        answer1.append(answer1[i]);
-        console.log(answer1[i]);
 
     }
-    answer1.textContent = i + 1 + '.' + answer1;
 
-}
+    var currentQuestion = questions[questionindex];
+
+    queid.textContent = currentQuestion.question;
+
+    console.log(currentQuestion);
+
+    for (var x = 0; x < currentQuestion.answer.length; x++) {
+
+        var choice = currentQuestion.answer[x];
 
 
-function showQuestion(questions) {
 
-    for (var x = 0; x < questions.question; x++) {
-        queid.textContent = questions.question[x];
+        var choiceall = document.createElement('button');
 
+        choiceall.setAttribute('class', 'answer1');
+
+
+
+        choiceall.innerHTML = "";
+        choiceall.value = choice;
+
+
+
+
+        choiceall.textContent = x + 1 + '.' + choice;
+
+
+        choiceall.addEventListener('click', checkcorrect);
+        ansid.append(choiceall);
 
         console.log(queid);
+
+
+
+
     }
-
-    // rightid.classList.remove('hide');
-    //worngid.classList.remove('hide');
-}
-
-/*
-
-
-function selectAnswer1(questions) {
-
-
-    answer1.textContent = questions.answer[0];
-    answer1.textContent = questions.answer[1];
-    answer1.textContent = questions.answer[2];
-    answer1.textContent = questions.answer[3];
-
-    for (var x = 0; x <= 4; x++) {
-        const jsonString1 = JSON.stringify(questions.answer[x]);
-        console.log(jsonString1);
-    }
-    // answer1.append(jsonString1);
-
-    answer1.addEventListener('click', submitIntianl());
-
 
 }
 
-function selectAnswer2(questions) {
-    answer2.textContent = questions.answer[0];
-    answer2.textContent = questions.answer[1];
-    answer2.textContent = questions.answer[2];
-    answer2.textContent = questions.answer[3];
-    console.log(answer2);
 
-    for (var x = 0; x <= 4; x++) {
-        const jsonString = JSON.stringify(questions.answer[x]);
-        console.log(jsonString);
+function checkcorrect(event) {
+    console.log("testing", event.target.value);
+
+
+    var choice = event.target.value;
+    var currentQuestion = questions[questionindex]
+
+
+    if (choice === currentQuestion.correct) {
+        worngid.classList.add('hide');
+
+        rightid.classList.remove('hide');
+        console.log(rightid);
+        setTimeout(() => {
+
+            rightid.classList.add('hide');
+            score++;
+
+
+
+            questionindex++;
+            showQuestion();
+
+        }, 1000);
+
     }
-    answer2.addEventListener('click', submitIntianl());
+    else {
+        rightid.classList.add('hide');
+        worngid.classList.remove('hide');
+        console.log(worngid);
+        setTimeout(() => {
+
+            worngid.classList.add('hide');
+            questionindex++;
+            showQuestion();
+            console.log("score is : " + score);
+
+        }, 1000);
+    }
+    // }
+
+
 
 }
 
-function selectAnswer3(questions) {
-    answer3.textContent = questions.answer[0];
-    answer3.textContent = questions.answer[1];
-    answer3.textContent = questions.answer[2];
-    answer3.textContent = questions.answer[3];
-    console.log(answer3);
-    for (var x = 0; x <= 4; x++) {
-        const jsonString = JSON.stringify(questions.answer[x]);
-        console.log(jsonString);
-    }
-    answer3.addEventListener('click', submitIntianl());
+
+function quizfinished() {
+
+
+    clearInterval(timerInterval);
+    console.log(timerInterval);
+
+    questionContainerElement.classList.add('hide');
+
+    quizfin.classList.remove('hide');
+    quizfin.innerHTML = "";
+
+    quizfin.innerHTML = "<h1 id='title'>Quiz Ended</h1><p>Your final score is" + " " + score + " out of " + questions.length + ".</p>" +
+        "Enter your initials: <input id='initials' type='text'><br><br>" +
+        "<button id='end-submit'>Submit Score</button>";
+
+
+    document.getElementById("end-submit").addEventListener("click", submitIntianl);
 
 }
 
-function selectAnswer4(questions) {
-    answer4.textContent = questions.answer[0];
-    answer4.textContent = questions.answer[1];
-    answer4.textContent = questions.answer[2];
-    answer4.textContent = questions.answer[3];
-    console.log(answer4);
 
-    for (var x = 0; x <= 4; x++) {
-        const jsonString = JSON.stringify(questions.answer[x]);
-        console.log(jsonString);
-    }
 
-    answer4.addEventListener('click', submitIntianl());
+function submitIntianl() {
+
+
+    let initials = document.getElementById("initials").value;
+    let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.push({ initials: initials, score: score });
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+    showHighScores();
+
 }
 
-*/
 
+function showHighScores() {
+    let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.sort((a, b) => b.score - a.score);
+    quizfin.innerHTML = "<h1>High Scores</h1>";
+    for (let i = 0; i < highScores.length; i++) {
+        quizfin.innerHTML += (i + 1) + ". " + highScores[i].initials + "  " + "your score is: " + highScores[i].score + "<br>";
+    }
+    quizfin.innerHTML += "<br><button id='startAgainButton'>Start Again</button>";
+    document.getElementById("startAgainButton").addEventListener("click", resetQuiz);
+}
 
-/*function submitIntianl() {
-
-    //   middleclass.classList.remove('hide');
-    //  score.classList.remove('hide');
-    //  savescore.classList.remove('hide');
-    //  submitbtn.classList.remove('hide');
-
-    //  submitbtn.addEventListener('click', submitIntianl());
-
-
-    //   var savescore = localStorage.getItem("inputtext");
-    //  score.textContent = savescore;
-
-
-    var currentQuizScore = localStorage.getItem("inputtext"),
-        userInitials = document.getElementById('initials-input').value,
-        highscoreObj = { name: userInitials, score: currentQuizScore },
-        newArr = [],
-        existingScores = getExistingScores(),
-        selectedQuiz = localStorage.getItem("selectedQuiz");
-
-
-}*/
-
-
-
+function resetQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    startbtn.style.display = "inline-block";
+    quizfin.innerHTML = "";
+    location.reload();
+}
 
 
 
