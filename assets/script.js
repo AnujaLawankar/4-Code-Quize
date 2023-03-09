@@ -79,10 +79,11 @@ function startGame() {
             secondsLeft--;
             timeEl.textContent = secondsLeft + "sec";
 
-            if (secondsLeft === 0) {
+            if (secondsLeft <= 0) {
                 // Stops execution of action at set interval
                 clearInterval(timerInterval);
-                return;
+                //return;
+                quizfinished();
             }
 
         }, 1000);
